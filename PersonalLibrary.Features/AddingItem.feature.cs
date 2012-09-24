@@ -83,6 +83,23 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Adding Item entry should error if one record is missing")]
+        public virtual void AddingItemEntryShouldErrorIfOneRecordIsMissing()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding Item entry should error if one record is missing", ((string[])(null)));
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 13
+    testRunner.Given("The user has entered all the information except the Item Name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+    testRunner.And("they have clicked on the Add button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+    testRunner.Then("the user should be displayed \"Please add name of item\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

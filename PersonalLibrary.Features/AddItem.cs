@@ -17,6 +17,7 @@ namespace PersonalLibrary.Features
         LoginModel _loginModel;
         ActionResult _result;
         AddItemController _addItemController;
+        ItemModel _itemModel;
 
         [Given(@"the user is logged in")]
         public void GivenTheUserIsLoggedIn()
@@ -44,6 +45,31 @@ namespace PersonalLibrary.Features
             Assert.IsNotNull(_result);
             Assert.IsInstanceOf<ViewResult>(_result);
         }
+
+        [Given(@"The user has entered all the information except the Item Name")]
+        public void GivenTheUserHasEnteredAllTheInformationExceptTheItemName()
+        {
+            _itemModel = new ItemModel
+            {
+                ItemName = string.Empty,
+                ItemFormat = "DVD",
+                ItemType = "Movie"
+            };
+            _addItemController = new AddItemController();
+        }
+
+        [Given(@"they have clicked on the Add button")]
+        public void GivenTheyHaveClickedOnTheAddButton()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"the user should be displayed ""(.*)""")]
+        public void ThenTheUserShouldBeDisplayed(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
     }
 }
